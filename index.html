@@ -1,12 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="frm1" action="/action_page.php">
+  your discord id: <input type="text" name="fname"><br>
+</form> 
+
+<p>Click "Submit" to recieve access token on discord</p>
+
+<button onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
 <script type="text/javascript" src="discord.11.5.0.min.js"></script>
 <script type="text/javascript">
+ function myFunction() {
+  var x = document.getElementById("frm1");
   const client = new Discord.Client();
-
-  client.on('message', msg => {
-    const guildTag = msg.channel.type === 'text' ? `[${msg.guild.name}]` : '[DM]';
-    const channelTag = msg.channel.type === 'text' ? `[#${msg.channel.name}]` : '';
-    console.log(`${guildTag}${channelTag} ${msg.author.tag}: ${msg.content}`);
-  });
-
-  client.login('some crazy token');
+  let user = client.users.get(x.elements[0].value)
+  user.send("your access code is adtwe_1un3i_asd")
+  client.login("NjQ1MTYxMDI2NTM0MjQ0MzUy.Xc-jIQ.JfwFS_Ln6WyX8ni2pb57TjkME_o")
+}
 </script>
+
+</body>
+</html>
